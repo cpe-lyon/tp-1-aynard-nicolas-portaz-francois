@@ -1,6 +1,9 @@
 **Exercice 2 - Prise en main de l'interpreteur de commandes**
 ============
 
+*Manuel*
+------------
+
 **2.1**
 La commande which sert à localiser une commande, il determine le path (chemin d'accès d'un fichier).
 
@@ -11,166 +14,76 @@ termes il faut utiliser la commande "n" pour next et "N" pour previous.
 **2.3**
 Pour quitter la page du manuel, il suffit d'utiliser la commande "q" comme indiqué sur le terminal.
 
-**2.4** La section 6 parle des jeux, économiseurs d'écran et gadgets.
+**2.4** 
+La section 6 parle des jeux, économiseurs d'écran et gadgets.
 
 
-
-
-
-
-
-
-2nd paragraph. *Italic*, **bold**, and `monospace`. Itemized lists
-look like:
-
-  * this one
-  * that one
-  * the other one
-
-Note that --- not considering the asterisk --- the actual text
-content starts at 4-columns in.
-
-> Block quotes are
-> written like so.
->
-> They can span multiple paragraphs,
-> if you like.
-
-Use 3 dashes for an em-dash. Use 2 dashes for ranges (ex., "it's all
-in chapters 12--14"). Three dots ... will be converted to an ellipsis.
-Unicode is supported. ☺
-
-
-
-An h2 header
+*Navigation dans l'arborescence des fichier*
 ------------
+Commande pour naviguer dans les fichiers : 
+*ls : afficher le contenu du dossier
+*cd :aller dans le dossier 
+*cd .. : aller dans le dossier parent
+*cd - revenir dans le précédent dossier
+*cd / : aller au dossier racine (root)
 
-Here's a numbered list:
+**2.5**
+Quand on essaie d'accéder au dossier root on a un refus d'accès (permission denied).
+**2.6**
+Lorsque l'on met sudo, la console dit que cd est inconu car sudo permet de lancer des programmes en mode admin et cd n'est pas un programme , juste une commade bash.
+**2.8**
+La commande sudo rm Nom_Du_Fichier permet de supprimer un fichier et uniquement un fichier et non pas un dossier (directory).
+**2.9**
+Pour supprimer un dossier, il faut utiliser la commande rmdir Nom_Du_Dossier.
+**2.10**
+La commande précédente ne marche que si le dossier est VIDE.
+**2.11**
+La commande pour supprimer un dossier et son contenu est : sudo rm -r nomDuDossier.
 
- 1. first item
- 2. second item
- 3. third item
+*Commandes importantes*
+------------
+**1**
+Pour afficherl'heure : date .
+**2**
+ls : afiche le contenu
+la : raccourci de ls -A -> affiche aussi ceux commençant par un .
+**3**
+Le programme ls se situe dans /usr/bin/ls
+**4** 
+La commande ll est un aliais de ls (ls -l), elle sert à donner plus d'infomation sur la liste des fichiers comme la date par exemple. Il n'existe pas d'entrée dans la manuel conercant cette commande.
+**5**
+La commande pour afficher ce qu'il y a dans bin est : ls /bin
+**6**
+Que fait la commande ls .. : montre ce qu'il y a dans le répertoire parent
+**7**
+Quelle commande donne le chemin complet du dossier courant : pwd
+**8**
+Que fait la commande echo 'yo' > plop exécutée 2 fois ?
+La commande crée le fichier plop et met yo dedans. (Si on le refait, alors il supprimera ce qu'il y a dans plop pour ne mettre uniquement yo.
+**9**
+Que fait la commande echo 'yo' >> plop exécutée 2 fois ?
+Pareil que au-dessus mais au lieu de supprimer cequ'il y a dans le fichier il ajoute à la fin de celui-ci.
+**10**
+A quoi sert la commande file ? Essayez la sur des fichiers de types différents
+file détermine le type du fichier.
+**11**
+Créez un fichier toto qui contient la chaîne Hello Toto ! ; créer ensuite un lien titi vers ce fichier
+avec la commande ln toto titi. Modifiez à présent le contenu de toto et affichez le contenu de titi :
+qu’observe-t-on ? Supprimez le fichier toto ; quelle conséquence cela a-t-il sur titi ?
+**12**
+Créez à présent un lien symbolique tutu sur titi avec la commande ln -s titi tutu. Modifiez le
+contenu de titi ; quelle conséquence pour tutu ? Et inversement ? Supprimez le fichier titi ; quelle
+conséquence cela a-t-il sur tutu ?
+**13**
+Affichez à l’écran le fichier /var/log/syslog. Quels raccourcis clavier permettent d’interrompre et
+reprendre le défilement à l’écran 2nd paragraph. *Italic*, **bold**, and `monospace`. Itemized lists
+look lthis one
+  * that onethe other one
 
-Note again how the actual text starts at 4 columns in (4 characters
-from the left side). Here's a code sample:
-
-    # Let me re-iterate ...
-    for i in 1 .. 10 { do-something(i) }
-
-As you probably guessed, indented 4 spaces. By the way, instead of
-indenting the block, you can use delimited blocks, if you like:
-
-~~~
-define foobar() {
-    print "Welcome to flavor country!";
-}
-~~~
-
-(which makes copying & pasting easier). You can optionally mark the
-delimited block for Pandoc to syntax highlight it:
-
-~~~python
-import time
-# Quick, count to ten!
-for i in range(10):
-    # (but not *too* quick)
-    time.sleep(0.5)
-    print(i)
-~~~
 
 
 
-### An h3 header ###
 
-Now a nested list:
 
- 1. First, get these ingredients:
 
-      * carrots
-      * celery
-      * lentils
 
- 2. Boil some water.
-
- 3. Dump everything in the pot and follow
-    this algorithm:
-
-        find wooden spoon
-        uncover pot
-        stir
-        cover pot
-        balance wooden spoon precariously on pot handle
-        wait 10 minutes
-        goto first step (or shut off burner when done)
-
-    Do not bump wooden spoon or it will fall.
-
-Notice again how text always lines up on 4-space indents (including
-that last line which continues item 3 above).
-
-Here's a link to [a website](http://foo.bar), to a [local
-doc](local-doc.html), and to a [section heading in the current
-doc](#an-h2-header). Here's a footnote [^1].
-
-[^1]: Some footnote text.
-
-Tables can look like this:
-
-Name           Size  Material      Color
-------------- -----  ------------  ------------
-All Business      9  leather       brown
-Roundabout       10  hemp canvas   natural
-Cinderella       11  glass         transparent
-
-Table: Shoes sizes, materials, and colors.
-
-(The above is the caption for the table.) Pandoc also supports
-multi-line tables:
-
---------  -----------------------
-Keyword   Text
---------  -----------------------
-red       Sunsets, apples, and
-          other red or reddish
-          things.
-
-green     Leaves, grass, frogs
-          and other things it's
-          not easy being.
---------  -----------------------
-
-A horizontal rule follows.
-
-***
-
-Here's a definition list:
-
-apples
-  : Good for making applesauce.
-
-oranges
-  : Citrus!
-
-tomatoes
-  : There's no "e" in tomatoe.
-
-Again, text is indented 4 spaces. (Put a blank line between each
-term and  its definition to spread things out more.)
-
-Here's a "line block" (note how whitespace is honored):
-
-| Line one
-|   Line too
-| Line tree
-
-and images can be specified like so:
-
-![example image](example-image.jpg "An exemplary image")
-
-Inline math equation: $\omega = d\phi / dt$. Display
-math should get its own line like so:
-
-$$I = \int \rho R^{2} dV$$
-
-And note that you can backslash-escape any punctuation characters
-which you wish to be displayed literally, ex.: \`foo\`, \*bar\*, etc.
