@@ -135,6 +135,7 @@ getent passwd | wc -l
 Combien de pages de manuel comportent le mot-clé conversion dans leur description ?  
 man -k conversion permet d'afficher toutes les utilisations du mot clé conversion dans l'ensemble du manuel.
 ou apropos conversion
+Conversion est dans 3 pages du manuel.  
 
 **20**
 A l’aide de la commande find, recherchez tous les fichiers se nommant passwd présents sur la machine.  
